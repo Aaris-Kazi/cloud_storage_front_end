@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import vault from '../vault.svg';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 function Register() {
@@ -14,23 +14,11 @@ function Register() {
     const headers = {
         'Content-Type': 'application/json',
     };
+    const navigate = useNavigate();
     const registerHandler = async (e) => {
 
         try {
-            // const resp = await axios.post(url, {
-            //     "username": username,
-            //     "firstname": firstname,
-            //     "lastname": lastname,
-            //     "email": email,
-            //     "password": password
-            // }).then(resp=>{
-            //     console.log(resp.status);
-            //     console.log(resp.data);
-
-            // }).catch(error=>{
-            //     console.error(error);
-
-            // });
+            e.preventDefault();
             const resp = await axios.post(url, {
                 username: username,
                 first_name: firstname,
@@ -41,6 +29,10 @@ function Register() {
                 {
                     headers: headers
                 });
+
+            if (resp.status === 200) {
+                navigate('/login/');
+            }
             console.log(resp.status);
             console.log(resp.data);
         } catch (error) {
