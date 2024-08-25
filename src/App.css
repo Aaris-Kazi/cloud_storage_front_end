@@ -1,38 +1,132 @@
-.App {
+.body {
+  align-content: center;
   text-align: center;
+  padding: 0px;
+  margin: 0px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.welcome_banner {
+  height: 33%;
+  width: 40%;
+  padding: 0px;
+  margin: 0px;
+  margin-top: 2%;
+  border-radius: 40px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media (max-width: 600px) {
+  .border-body {
+    margin-top: 13rem;
+    padding: 5%;
+  }
+
+  .welcome_banner {
+    margin-bottom: 9%;
   }
 }
 
-.App-header {
+@media (min-width: 601px) and (max-width: 2000px) {
+  .border-body {
+    margin-top: 8%;
+    padding: 5px;
+  }
+
+  .welcome_banner {
+    margin-bottom: 5%;
+  }
+}
+
+#root {
+  padding: 0px;
+}
+
+body {
   background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.container.app {
+  background-color: #282c34;
+  margin: 0px;
+  padding: 0px;
+}
+
+.container {
+  background-color: #282c34;
+  margin: 0px;
+  padding: 0px;
+  max-width: -webkit-fill-available;
+
+}
+
+.landing_page {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.border-body {
+  border: 1px solid white;
+  margin-left: 20%;
+  margin-right: 20%;
+  border-radius: 25px;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.login_banner {
+  border-radius: 25px;
+  height: 80px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+.form.mb-3 {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+.form-control {
+  background-color: transparent;
+  border-radius: 0px;
+  border-top: 0px;
+  border-right: 0px;
+  border-left: 0px;
+  color: white;
+}
+.form-control::after{
+  background-color: transparent;
+}
+.form-control::placeholder {
+  color: white;
+  background-color: transparent;
+}
+.form-control::-moz-focus-inner {
+  background-color: transparent;
+}
+.form-control:focus {
+  background-color: transparent;
+  color: white;
+}
+.form-control:active {
+  background-color: transparent;
+}
+.form-control:not(:placeholder-shown) {
+  background-color: transparent;
+}
+.form-control:-webkit-autofill {
+  background-color: transparent;
+}
+
+.form-label {
+  color: white;
+}
+
+
+.form.mb-3 {
+  text-align: start;
+}
+.whiteColor {
+  color: white;
+  text-decoration: none;
+}
+.topSpacing {
+  margin-top: 2%;
+}
+.btn.btn-primary {
+  margin-bottom: 2%;
 }
