@@ -41,17 +41,17 @@
 }
 
 body {
-  background-color: #282c34;
+  background-color: #1a1918;
 }
 
 .container.app {
-  background-color: #282c34;
+  background-color: #1a1918;
   margin: 0px;
   padding: 0px;
 }
 
 .container {
-  background-color: #282c34;
+  background-color: #1a1918;
   margin: 0px;
   padding: 0px;
   max-width: -webkit-fill-available;
@@ -59,11 +59,11 @@ body {
 }
 
 .landing_page {
-  color: white;
+  color: #fff;
 }
 
 .border-body {
-  border: 1px solid white;
+  border: 1px solid #fff;
   margin-left: 20%;
   margin-right: 20%;
   border-radius: 25px;
@@ -79,6 +79,7 @@ body {
 .form.mb-3 {
   padding-left: 10%;
   padding-right: 10%;
+  text-align: start;
 }
 .form-control {
   background-color: transparent;
@@ -86,13 +87,13 @@ body {
   border-top: 0px;
   border-right: 0px;
   border-left: 0px;
-  color: white;
+  color: #fff;
 }
 .form-control::after{
   background-color: transparent;
 }
 .form-control::placeholder {
-  color: white;
+  color: #fff;
   background-color: transparent;
 }
 .form-control::-moz-focus-inner {
@@ -100,7 +101,7 @@ body {
 }
 .form-control:focus {
   background-color: transparent;
-  color: white;
+  color: #fff;
 }
 .form-control:active {
   background-color: transparent;
@@ -113,15 +114,11 @@ body {
 }
 
 .form-label {
-  color: white;
+  color: #fff;
 }
 
-
-.form.mb-3 {
-  text-align: start;
-}
 .whiteColor {
-  color: white;
+  color: #fff;
   text-decoration: none;
 }
 .topSpacing {
