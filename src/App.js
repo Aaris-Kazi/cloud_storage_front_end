@@ -2,6 +2,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.js'
 import './App.css';
+import '@fortawesome/fontawesome-svg-core';
+import '@fortawesome/react-fontawesome';
 
 import { Route, Routes } from 'react-router-dom';
 import LandinPage from './pages/LandingPage';

@@ -127,3 +127,6 @@ body {
 .btn.btn-primary {
   margin-bottom: 2%;
 }
+.loginHeaderText {
+  margin-left: 4px;
+}
