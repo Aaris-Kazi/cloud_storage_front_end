@@ -1,6 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
+import { faFolder } from '@fortawesome/free-solid-svg-icons';
 
 export const Home = () => {
     const username = localStorage.getItem("cloud_drive_username");
@@ -11,7 +12,10 @@ export const Home = () => {
       );
     } else {
       return (
-        <div className='whiteColor'><FontAwesomeIcon icon={ faUser } /> <span className='loginHeaderText'>Please login</span> </div>
+        <div>
+          <div className='whiteColor'><FontAwesomeIcon icon={ faUser } /> <span className='loginHeaderText'>Please login</span> </div>
+          <div className='backgroudBlack folderColor'><FontAwesomeIcon icon={faFolder} /></div>
+        </div>
       );
 
     }
