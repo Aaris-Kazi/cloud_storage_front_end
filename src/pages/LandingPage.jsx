@@ -4,6 +4,7 @@ import 'bootstrap/dist/js/bootstrap.js'
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import landingimg1 from '../img/landingimg1.jpeg';
+import landingimg2 from '../img/landingimg2.jpeg';
 
 function LandinPage() {
   return (
@@ -24,9 +25,31 @@ function LandinPage() {
           </div>
         </div>
         <hr></hr>
-        <div className="row"></div>
-        <div className="row"></div>
-        <div className="row"></div>
+        <div className="row">
+          <div className="col-6 landing-img left">
+            <img src={landingimg2} alt="" srcset="" className='img-fluid landing' />
+          </div>
+          <div className="col-6 landing">
+            <span className="h1 whiteColor">People-first collaboration apps to supercharge teamwork</span>
+            <p className="h6 whiteColor marginTop">Drive integrates with Docs, Sheets, and Slides, cloud-native collaboration apps that enable your team to create content and collaborate more effectively in real time.</p>
+          </div>
+        </div>
+        <hr></hr>
+        <div className="row">
+          <div className="col text-align-center">
+            <span className="h4 whiteColor">Ready to get started?</span>
+            <br />
+            <Link to={'/home'} className='text-link'><button type="button" className='btn btn-primary top whiteColor'>Go to drive</button></Link>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col padding">
+            <div className="row">
+              <span className="h6 whiteColor">Follow Us</span>
+            </div>
+            <hr></hr>
+          </div>
+        </div>
       </div>
     </div>
   );

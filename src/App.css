@@ -5,6 +5,11 @@
   margin: 0px;
 }
 
+.row {
+  margin: 0px;
+  padding: 0px;
+}
+
 .welcome_banner {
   height: 33%;
   width: 40%;
@@ -32,6 +37,7 @@
   .col-6.landing {
     text-align: center;
     width: 100%;
+    margin: 0px;
     padding: 16%;
     height: auto;
   }
@@ -52,6 +58,13 @@
     text-align: center;
     width: 100%;
   }
+  .col-6.landing-img.left {
+    margin-top: 20px;
+  }
+
+  .btn.btn-primary.top {
+    margin-top: 20px;
+  }
 }
 
 @media (min-width: 601px) and (max-width: 2000px) {
@@ -65,6 +78,7 @@
   }
 
   .col-6.landing {
+    margin: 0px;
     padding: 15%;
   }
 
@@ -81,6 +95,10 @@
     max-width: 729px;
     max-height: 494px;
     border-radius: 4%;
+  }
+
+  .btn.btn-primary.top {
+    margin-top: 40px;
   }
 
 
@@ -207,6 +225,8 @@ body {
 
 .background {
   background-color: #1a1918;
+  padding: 0px;
+  margin: 0px;
 }
 
 .navbar {
@@ -254,4 +274,17 @@ hr {
   border-width: 1px 0 0;
   margin-top: 40px;
   margin-bottom: 20px;
+
+}
+
+.col-6.landing-img.left {
+  text-align: center;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.padding {
+  padding: 5%;
 }
