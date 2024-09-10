@@ -45,7 +45,9 @@ function Register() {
                 <div className="col body border-body">
                     <span className="h5 landing_page">Sign Up</span>
                     <br />
-                    <img src={vault} className="login_banner" alt="logo" />
+                    <Link to={'/'}>
+                        <img src={vault} className="login_banner" alt="logo" />
+                    </Link>
                     <form onSubmit={registerHandler}>
                         <div className="form mb-3">
                             <input

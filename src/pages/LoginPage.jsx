@@ -45,7 +45,9 @@ function LoginPage() {
                 <div className="col body border-body">
                     <span className="h5 landing_page">Sign in</span>
                     <br />
-                    <img src={vault} className="login_banner" alt="logo" />
+                    <Link to={'/'}>
+                        <img src={vault} className="login_banner" alt="logo" />
+                    </Link>
                     <form onSubmit={handleSubmit}>
 
                         <div className="form mb-3">

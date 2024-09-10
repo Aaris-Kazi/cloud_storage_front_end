@@ -65,6 +65,12 @@
   .btn.btn-primary.top {
     margin-top: 20px;
   }
+
+  .border-body {
+    max-width: 346px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 @media (min-width: 601px) and (max-width: 2000px) {
@@ -89,7 +95,6 @@
 
 
   .img-fluid.landing {
-    /* padding: 25%; */
     margin-top: 24px;
     margin-bottom: 24px;
     max-width: 729px;
@@ -99,6 +104,12 @@
 
   .btn.btn-primary.top {
     margin-top: 40px;
+  }
+
+  .border-body {
+    max-width: 692px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
 
@@ -133,10 +144,7 @@ body {
 
 .border-body {
   border: 1px solid #fff;
-  margin-left: 20%;
-  margin-right: 20%;
   border-radius: 25px;
-
 }
 
 .login_banner {
