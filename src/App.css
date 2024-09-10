@@ -288,3 +288,11 @@ hr {
 .padding {
   padding: 5%;
 }
+
+.row.footer {
+  background-color: rgba(196, 190, 190, 0.063);
+}
+
+.col-2.footer {
+  min-width: 128px;
+}

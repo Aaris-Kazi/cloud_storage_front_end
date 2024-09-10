@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.js'
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import landingimg1 from '../img/landingimg1.jpeg';
 import landingimg2 from '../img/landingimg2.jpeg';
 
@@ -42,14 +43,7 @@ function LandinPage() {
             <Link to={'/home'} className='text-link'><button type="button" className='btn btn-primary top whiteColor'>Go to drive</button></Link>
           </div>
         </div>
-        <div className="row">
-          <div className="col padding">
-            <div className="row">
-              <span className="h6 whiteColor">Follow Us</span>
-            </div>
-            <hr></hr>
-          </div>
-        </div>
+        <Footer/>
       </div>
     </div>
   );
