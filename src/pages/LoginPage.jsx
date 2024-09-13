@@ -29,7 +29,7 @@ function LoginPage() {
 
             if (resp.status === 200) {
                 localStorage.setItem("cloud_drive_username", resp.data.username);
-                localStorage.setItem("cloud_drive_access_token ", resp.data.access_token);
+                localStorage.setItem("cloud_drive_access_token", resp.data.access_token);
                 navigate('/home/')
             }
 
