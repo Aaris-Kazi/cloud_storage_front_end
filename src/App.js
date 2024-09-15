@@ -9,7 +9,7 @@ import { Route, Routes } from 'react-router-dom';
 import LandinPage from './pages/LandingPage';
 import LoginPage from './pages/LoginPage';
 import Register from './pages/Register';
-import { Home } from './pages/Home';
+import Home from './pages/Home';
 function App() {
 
   return (
