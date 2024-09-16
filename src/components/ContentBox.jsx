@@ -68,28 +68,15 @@ const ContentBox = () => {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td><span className='margin-left'><FontAwesomeIcon icon={faFolder} size='xl' className='folderColor margin-right'/>Aaris Document</span></td>
-              </tr>
-              <tr>
-                <td><span className='margin-left'><FontAwesomeIcon icon={faFile} size='xl' className='folderColor margin-right-file'/>Hey.mp3</span></td>
-              </tr>
-            </tbody>
-          </table>
-
-          <div className="container">
-            <div className="row">
               {
                 data.map((value) => (
-
-                  <div className="col-3 folders">
-                    <div className='backgroudBlack folderColor'><FontAwesomeIcon icon={faFolder} size='2xl' className='folder-grid' /></div>
-                    <span key="" className="files whiteColor text-short">{value}</span>
-                  </div>
+                  <tr>
+                    {value.includes(".") ? <td><span className='margin-left'><FontAwesomeIcon icon={faFile} size='xl' className='folderColor margin-right-file'/>{value}</span></td> : <td><span className='margin-left'><FontAwesomeIcon icon={faFolder} size='xl' className='folderColor margin-right'/>{value}</span></td>}
+                  </tr>
                 ))
               }
-            </div>
-          </div>
+            </tbody>
+          </table>
         </div>
       </div>
     );
