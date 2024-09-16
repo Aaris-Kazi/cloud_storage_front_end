@@ -1,14 +1,13 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
-import { faFolder } from '@fortawesome/free-solid-svg-icons';
+import { faFile, faFolder } from '@fortawesome/free-solid-svg-icons';
 import server_error from '../img/server_error.jpeg';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import axios from 'axios';
 
 const ContentBox = () => {
-    const username = localStorage.getItem("cloud_drive_username");
   const token = localStorage.getItem("cloud_drive_access_token");
 
   const [data, setData] = useState([]);
@@ -16,7 +15,7 @@ const ContentBox = () => {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    
+
     axios
       .get(
         "http://127.0.0.1:8000/api/v1/directory/",
@@ -57,19 +56,39 @@ const ContentBox = () => {
 
   if (token != null) {
     return (
-      <div className="container">
-        <div className='whiteColor'><span className='loginHeaderText'> Hi, {username}</span></div>
-        <div className="container">
-          <div className="row">
-            {
-              data.map((value) => (
+      <div className="container context">
+        <div className="row padding-box">
+          <span className="h4 whiteColor">All Storage</span>
+        </div>
+        <div className="row backgound">
+          <table className="table table-dark">
+            <thead>
+              <tr>
+                <th scope='col'>Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span className='margin-left'><FontAwesomeIcon icon={faFolder} size='xl' className='folderColor margin-right'/>Aaris Document</span></td>
+              </tr>
+              <tr>
+                <td><span className='margin-left'><FontAwesomeIcon icon={faFile} size='xl' className='folderColor margin-right-file'/>Hey.mp3</span></td>
+              </tr>
+            </tbody>
+          </table>
 
-                <div className="col-2">
-                  <div className='backgroudBlack folderColor'><FontAwesomeIcon icon={faFolder} /></div>
-                  <span className="whiteColor">{value}</span>
-                </div>
-              ))
-            }
+          <div className="container">
+            <div className="row">
+              {
+                data.map((value) => (
+
+                  <div className="col-3 folders">
+                    <div className='backgroudBlack folderColor'><FontAwesomeIcon icon={faFolder} size='2xl' className='folder-grid' /></div>
+                    <span key="" className="files whiteColor text-short">{value}</span>
+                  </div>
+                ))
+              }
+            </div>
           </div>
         </div>
       </div>
@@ -78,7 +97,7 @@ const ContentBox = () => {
     return (
       <div>
         <div className='whiteColor'><FontAwesomeIcon icon={faUser} /> <span className='loginHeaderText'>Please login</span> </div>
-        
+
       </div>
     );
 

@@ -92,6 +92,15 @@
     max-height: 300px;
     margin-top: 55%;
   }
+
+  .container.context {
+    margin-top: 20%;
+  }
+
+  .folder-grid {
+    max-width: 178px;
+    max-height: 178px;
+  }
 }
 
 @media (min-width: 601px) and (max-width: 2000px) {
@@ -145,6 +154,14 @@
     max-width: 400px;
     max-height: 400px;
     margin-top: 10%;
+  }
+
+  .container.context {
+    margin-top: 10%;
+  }
+
+  .padding-box {
+    padding: 16px;
   }
   
 
@@ -348,4 +365,27 @@ hr {
 .spinner-border {
   min-width: 50px;
   min-height: 50px;
+}
+
+.files.whiteColor {
+  text-overflow: ellipsis;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.table.table-dark {
+  background-color: #1a1918;
+}
+
+.margin-left {
+  margin-left: 10px;
+}
+
+.margin-right {
+  margin-right: 14px;
+}
+
+.margin-right-file {
+  margin-right: 18px;
 }
