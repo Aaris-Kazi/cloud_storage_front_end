@@ -101,6 +101,17 @@
     max-width: 178px;
     max-height: 178px;
   }
+
+  .col-2.no-padd-marg {
+    max-width: fit-content;
+    margin: 22px;
+    padding: 5px;
+  }
+
+  .btn.btn-dark.widgets {
+    min-height: 85px;
+    min-width: 96px;
+  }
 }
 
 @media (min-width: 601px) and (max-width: 2000px) {
@@ -162,6 +173,16 @@
 
   .padding-box {
     padding: 16px;
+  }
+
+  .col-2.no-padd-marg {
+    max-width: fit-content;
+    padding: 5px;
+  }
+
+  .btn.btn-dark.widgets {
+    min-height: 76px;
+    min-width: 140px;
   }
   
 
@@ -388,4 +409,10 @@ hr {
 
 .margin-right-file {
   margin-right: 18px;
+}
+
+
+.no-padd-marg {
+  padding: 0px;
+  margin: 0px;
 }

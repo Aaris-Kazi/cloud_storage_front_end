@@ -1,10 +1,10 @@
-import React from 'react'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
-import { faFile, faFolder } from '@fortawesome/free-solid-svg-icons';
+import { faClone, faFile, faFolder, faFolderPlus, faPlus, faUpload } from '@fortawesome/free-solid-svg-icons';
 import server_error from '../img/server_error.jpeg';
-import { useState } from 'react';
-import { useEffect } from 'react';
+import { useState, useEffect, React } from 'react';
+
 import axios from 'axios';
 
 const ContentBox = () => {
@@ -14,9 +14,8 @@ const ContentBox = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
-  useEffect(() => {
-
-    axios
+  async function reloadData() {
+    const resp = await axios
       .get(
         "http://127.0.0.1:8000/api/v1/directory/",
         {
@@ -25,16 +24,18 @@ const ContentBox = () => {
             'Authorization': 'Bearer ' + token,
           }
         }
-      )
-      .then(resp => {
-        setData(resp.data.direcotries);
-        setLoading(false);
-      })
+      );
+    setData(resp.data.direcotries);
+    setLoading(false);
+  }
+
+  useEffect(() => {
+    reloadData()
       .catch(error => {
         setLoading(false);
         setError(true);
-      });
-  }, [token]);
+      })
+  }, []);
 
   if (loading) {
     return (
@@ -49,7 +50,7 @@ const ContentBox = () => {
   if (error) {
     return (
       <div className="container response text-center error_banner">
-        <img className="img-fluid error_banner" src={server_error} alt="" srcset="" />
+        <img className="img-fluid error_banner" src={server_error} alt="" />
       </div>
     );
   }
@@ -57,6 +58,32 @@ const ContentBox = () => {
   if (token != null) {
     return (
       <div className="container context">
+        <div className="row padding-box">
+          <div className="col-2 no-padd-marg">
+            <button type="button" className='btn btn-dark widgets'>
+              <div className="row"><FontAwesomeIcon icon={faPlus} size='xl' className='no-padd-marg' /></div>
+              <div className="row">Create</div>
+            </button>
+          </div>
+          <div className="col-2 no-padd-marg">
+            <button type="button" className='btn btn-dark widgets'>
+              <div className="row"><FontAwesomeIcon icon={faUpload} size='xl' className='no-padd-marg' /></div>
+              <div className="row">Upload and Drop</div>
+            </button>
+          </div>
+          <div className="col-2 no-padd-marg">
+            <button type="button" className='btn btn-dark widgets'>
+              <div className="row"><FontAwesomeIcon icon={faFolderPlus} size='xl' className='no-padd-marg' /></div>
+              <div className="row">Create Folder</div>
+            </button>
+          </div>
+          <div className="col-2 no-padd-marg">
+            <button type="button" className='btn btn-dark widgets'>
+              <div className="row no-padd-marg"><FontAwesomeIcon icon={faClone} size='xl' className='no-padd-marg' /></div>
+              <div className="row">Transfer a Copy</div>
+            </button>
+          </div>
+        </div>
         <div className="row padding-box">
           <span className="h4 whiteColor">All Storage</span>
         </div>
@@ -70,8 +97,8 @@ const ContentBox = () => {
             <tbody>
               {
                 data.map((value) => (
-                  <tr>
-                    {value.includes(".") ? <td><span className='margin-left'><FontAwesomeIcon icon={faFile} size='xl' className='folderColor margin-right-file'/>{value}</span></td> : <td><span className='margin-left'><FontAwesomeIcon icon={faFolder} size='xl' className='folderColor margin-right'/>{value}</span></td>}
+                  <tr key={value.id}>
+                    {value.includes(".") ? <td><span className='margin-left'><FontAwesomeIcon icon={faFile} size='xl' className='folderColor margin-right-file' />{value}</span></td> : <td><span className='margin-left'><FontAwesomeIcon icon={faFolder} size='xl' className='folderColor margin-right' />{value}</span></td>}
                   </tr>
                 ))
               }
